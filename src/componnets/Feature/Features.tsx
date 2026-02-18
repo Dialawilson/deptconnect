@@ -76,6 +76,9 @@ export default function Features() {
             </div>
           ))}
         </div>
+          <div className="mt-4 text-2xl text-gray-600 text-center max-w-xl mx-auto">
+            <p className="text-center">Online Payment, Pickup in Department</p>
+          </div>
 
       </div>
     </section>
