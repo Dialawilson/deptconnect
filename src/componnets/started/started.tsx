@@ -7,7 +7,7 @@ export default function Started() {
         
       >
         {/* The Overlay: Essential for text readability on images */}
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
 
         {/* Content */}
         <div className="relative z-10 px-4">
