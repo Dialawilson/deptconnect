@@ -5,19 +5,19 @@ const FEATURES = [
     icon: <DownloadCloud />,
     title: "Download receipt",
     subtitle: "anytime",
-    color: "bg-blue-50 text-blue-600",
+    // color: " text-[#489B3F]",
   },
   {
     icon: <FileText />,
     title: "View transaction",
     subtitle: "history",
-    color: "bg-orange-50 text-orange-600",
+    // color: "bg-orange-50 text-orange-600",
   },
   {
     icon: <Layers />,
     title: "Transparent Departmental",
     subtitle: "Records",
-    color: "bg-purple-50 text-purple-600",
+    // color: "bg-purple-50 text-purple-600",
   },
 ];
 
@@ -36,13 +36,13 @@ export default function Simplified() {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
           {FEATURES.map((feature, index) => (
             <div
               key={index}
-              className="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              className="text-center p-8 rounded-2xl   "
             >
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 ${feature.color}`}>
+              <div className={`w-14 h-14 text-[#489B3F] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mx-auto flex bg-[#baefb4] rounded-full items-center justify-center mb-6 `}>
                 {feature.icon}
               </div>
               

@@ -8,7 +8,7 @@ export default function QuickStats() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50/50">
+    <section className="py-16 ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           {/* <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600 mb-2">
