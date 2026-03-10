@@ -4,19 +4,23 @@ import Activities from "@/componnets/Activities/Activities";
 import Simplifed from "@/componnets/Simplified/Simplified";
 import Started from "@/componnets/started/started"
 import BGimg from '@/assets/img/pagentry.jpg';
-import Footer from '@/componnets/footer/footer'
+import Btn from '@/componnets/footer/footer'
+import QuickStats from "@/componnets/Quick_Stats/QuickStats";
 
 
 export default function Home() {
   return (
     <>
-    <section className="max-w-7xl mx-auto">
+    <section className=" ">
       <Hero />
       <div className="max-w-7xl mx-auto  my-12">
         <Features/>
       </div>
       <div className="max-w-7xl mx-auto  my-12">
         <Activities/>
+      </div>
+      <div>
+        <QuickStats/>
       </div>
       <div className="max-w-7xl mx-auto px-10 my-12 bg-gray-50/50">
         <Simplifed/>
@@ -25,7 +29,7 @@ export default function Home() {
         <Started/>
       </div>
       <div>
-        <Footer/>
+        {/* <Btn/> */}
       </div>
 
     </section>
