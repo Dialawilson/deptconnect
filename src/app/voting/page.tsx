@@ -136,42 +136,56 @@ function VotingPage() {
 
       {/* FOOTER */}
       <div className="bg-white w-full">
-       <div className="flex flex-col lg:flex-row items-start lg:items-stretch justify-between p-10 gap-4">
-         <div className="flex flex-col justify-between h-[100px]">
-           <Image src={logo} alt="logo" className="max-w-[100px] max-h-[100px] object-contain" />
-          <p className="text-[#0D0D0D] -mt-8 text-start">Your Departmental Hub for Voting, Shoping and Transparency</p>
-          </div>
-           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-2 w-full">
-         <div className="flex flex-col items-start lg:items-center p-2 gap-2">
-            <p className="text-[#489B3F]">Company</p>
-            <p className="text-[#070707]">About us</p>
-            <p className="text-[#070707]">Features</p>
-            <p className="text-[#070707]">Activities</p>
-          </div>
+  <div className="flex flex-col lg:flex-row items-start justify-between p-10 gap-4">
+    
+    {/* Logo Column */}
+    <div className="flex flex-col justify-between">
+      <Image src={logo} alt="logo" className="max-w-[100px] max-h-[100px] object-contain" />
+      <p className="text-[#0D0D0D] text-start -mt-8">
+        Your Departmental Hub for Voting, Shopping and Transparency
+      </p>
+    </div>
 
-          <div className="flex flex-col items-start lg:items-center p-2 gap-2">
-            <p className="text-[#489B3F]">Legal</p>
-            <p className="text-[#070707]">Safety Tips</p>
-            <p className="text-[#070707]">Terms of use</p>
-            <p className="text-[#070707]">Privacy Policy</p>
-          </div>
-
-           <div className="flex flex-col items-start w-full md:w-full lg:max-w-full lg:items-center p-2 gap-2">
-            <p className="text-[#489B3F]">Newsletter</p>
-            <p className="text-[#070707] text-left">Stay updated with the latest DeptConnect activities and events.</p>
-            <form className="text-gray-400 flex flex-col w-full gap-2">
-              <input
-                type="text"
-                placeholder="Add Email"
-                className="bg-gray-200 p-2 rounded-md text-gray-900 focus:outline-none"
-              />
-              <button className="bg-[#489B3F] rounded-md p-2 text-white hover:bg-[#3e8836] transition">
-                Subscribe
-              </button>
-            </form>
-          </div>
-         </div>
+    {/* Links & Newsletter */}
+    <div className="flex flex-col lg:flex-row items-start lg:items-stretch justify-between gap-2 flex-1">
+      
+      {/* Company */}
+      <div className="flex flex-col items-start lg:items-center p-2 gap-2 flex-1">
+        <p className="text-[#489B3F]">Company</p>
+        <p className="text-[#070707]">About us</p>
+        <p className="text-[#070707]">Features</p>
+        <p className="text-[#070707]">Activities</p>
       </div>
+
+      {/* Legal */}
+      <div className="flex flex-col items-start lg:items-center p-2 gap-2 flex-1">
+        <p className="text-[#489B3F]">Legal</p>
+        <p className="text-[#070707]">Safety Tips</p>
+        <p className="text-[#070707]">Terms of use</p>
+        <p className="text-[#070707]">Privacy Policy</p>
+      </div>
+
+      {/* Newsletter */}
+      <div className="flex flex-col items-start lg:items-center p-2 gap-2 flex-1">
+        <p className="text-[#489B3F]">Newsletter</p>
+        <p className="text-[#070707] text-left">
+          Stay updated with the latest DeptConnect activities and events.
+        </p>
+        <form className="text-gray-400 flex flex-col w-full gap-2">
+          <input
+            type="text"
+            placeholder="Add Email"
+            className="bg-gray-200 p-2 rounded-md text-gray-900 focus:outline-none"
+          />
+          <button className="bg-[#489B3F] rounded-md p-2 text-white hover:bg-[#3e8836] transition">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
         
          
           
