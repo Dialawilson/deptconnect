@@ -2,6 +2,7 @@ import hero from "@/assets/img/voters.png";
 import vote from "@/assets/img/vote2.png";
 import Image from "next/image";
 import { ArrowRightCircle, Bell, Calendar, Star } from "@deemlol/next-icons";
+import Link from "next/link";
 
 const ACTIVITIES = [
   {
@@ -91,9 +92,9 @@ export default function Activities() {
                 </label>
               </div>
 
-              <button className="w-fit mt-2 bg-[#489B3F] hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg uppercase text-xs tracking-widest">
+              <Link href="/voting" className="w-fit mt-2 bg-[#489B3F] hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg uppercase text-xs tracking-widest">
                 Vote Now
-              </button>
+              </Link>
             </div>
           </div>
 
