@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default function AuthModal({ isOpen, onClose }: Props) {
-  const [view, setView] = useState<"home" | "login" | "register">("home");
+  const [view, setView] = useState<"home" | "login" |"forgot-password" | "register">("home");
 
   if (!isOpen) return null;
 
@@ -66,7 +66,7 @@ export default function AuthModal({ isOpen, onClose }: Props) {
             </button>
 
             <button
-              onClick={() => setView("register")}
+              onClick={() => setView("login")}
               className="border py-2 rounded-4xl flex items-center justify-between px-5 text-gray-700"
             >
               Continue with Email 
@@ -81,16 +81,21 @@ export default function AuthModal({ isOpen, onClose }: Props) {
 
         {view === "login" && (
           <div className="flex flex-col gap-3">
-            <h2 className="text-lg font-semibold">Login</h2>
+            <h2 className="text-lg font-semibold">Welcome Back</h2>
+            <p>Sign in with your email and password to continue.</p>
 
+            <label htmlFor="email">Email</label>
             <input
+            name="email"
               type="email"
-              placeholder="Email"
+              placeholder="name@example.com"
               className="border p-2 rounded"
             />
+            <label htmlFor="password" className="flex justify-between">Password  <button onClick={()=>setView("forgot-password")}>forgot password</button></label>
             <input
+              name="password" 
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               className="border p-2 rounded"
             />
 
