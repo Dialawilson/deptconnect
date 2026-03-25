@@ -23,8 +23,8 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-10 text-gray-700 font-medium">
             <Link href="#">Home</Link>
             <Link href="/voting">Voting</Link>
-            <Link href="#">Shop</Link>
-            <Link href="#">Activities</Link>
+            <Link href="/shop">Shop</Link>
+            <Link href="/activities">Activities</Link>
           </div>
 
           {/* Button */}
