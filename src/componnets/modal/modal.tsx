@@ -31,7 +31,7 @@ export default function AuthModal({ isOpen, onClose }: Props) {
         {/* Cancel Button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500"
+          className="absolute cursor-pointer top-3 right-3 text-gray-500"
         >
           ✕
         </button>
@@ -40,7 +40,7 @@ export default function AuthModal({ isOpen, onClose }: Props) {
         {view !== "home" && (
           <button
             onClick={() => setView("home")}
-            className="mb-4 text-sm text-gray-500"
+            className="mb-4 hover:text-[#489B3F] cursor-pointer text-sm text-gray-500"
           >
             ← Back
           </button>
@@ -75,7 +75,7 @@ export default function AuthModal({ isOpen, onClose }: Props) {
             <p className="text-center text-sm text-gray-500">
               By proceeding, you agree to our <span className="underline">Terms</span> and acknowledge our <span className="underline">Privacy Policy</span>.
             </p>
-            <h3 className="text-centerm">Don`t have an account? <button onClick={() => setView("register")} className="text-[#489B3F] text-center font-bold">Sign up</button></h3>
+            <h3 className="text-centerm">Don`t have an account? <button onClick={() => setView("register")} className="text-[#489B3F] text-center font-bold cursor-pointer">Sign up</button></h3>
           </div>
         )}
 
@@ -91,7 +91,7 @@ export default function AuthModal({ isOpen, onClose }: Props) {
               placeholder="name@example.com"
               className="border p-2 rounded"
             />
-            <label htmlFor="password" className="flex justify-between">Password  <button onClick={()=>setView("forgot-password")}>forgot password</button></label>
+            <label htmlFor="password" className="flex justify-between">Password  <button className="font-bold text-[#489B3F] cursor-pointer text-center" onClick={()=>setView("forgot-password")}>forgot password</button></label>
             <input
               name="password" 
               type="password"
@@ -99,29 +99,73 @@ export default function AuthModal({ isOpen, onClose }: Props) {
               className="border p-2 rounded"
             />
 
-            <button className="bg-[#489B3F] text-white py-2 rounded">
+            <button  className="bg-[#489B3F] cursor-pointer text-white py-2 rounded">
               Sign In
             </button>
+            <span className="flex gap-1.5">
+
+            <p>Remember your password? </p><button className="text-[#489B3F] cursor-pointer font-bold" onClick={() => setView("login")}>Sign in</button>
+            </span>
           </div>
         )}
+        {
+          view === "forgot-password" &&(
+            <div className="flex flex-col gap-3">
+              <h2 className="text-lg font-semibold">Forgot Password</h2>
+              <p>Enter your email to receive password reset instructions.</p>
+
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                placeholder="name@example.com"
+                className="border p-2 rounded"
+              />
+
+              <button className="bg-[#489B3F] cursor-pointer text-white py-2 rounded">
+                Send Reset Link
+              </button>
+            </div>
+          ) 
+        }
 
         {view === "register" && (
           <div className="flex flex-col gap-3">
-            <h2 className="text-lg font-semibold">Register</h2>
+            <h2 className="text-lg font-semibold">Create an account</h2>
+            <p>Join to explore DepConnect features</p>
+          
+            <div className="flex gap-3">
+<label htmlFor="name">First Name
 
             <input
               type="text"
-              placeholder="Name"
-              className="border p-2 rounded"
+              placeholder="First Name"
+              className="border p-2 rounded w-full"
+              />
+              </label>
+           <label htmlFor="last-name">Last Name
+             <input
+              type="text"
+              placeholder="Last Name"
+              className="border p-2 w-full rounded"
             />
+           </label>
+              </div>
+              <label htmlFor="email">Email</label>
             <input
               type="email"
-              placeholder="Email"
+              placeholder="name@example.com"
               className="border p-2 rounded"
             />
+            <label htmlFor="password">State</label>
             <input
-              type="password"
-              placeholder="Password"
+              type="text"
+              placeholder="Enter your state"
+              className="border p-2 rounded"
+            />
+            <label htmlFor="phone">Phone Number</label>
+            <input
+              type="text"
+              placeholder="Enter your password"
               className="border p-2 rounded"
             />
 
