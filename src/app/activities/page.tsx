@@ -2,9 +2,10 @@
 import { useState } from "react";
 import { FaCamera } from "react-icons/fa";
 import ActivityCard from "./activiteCard";
-
+import CustomDatePicker from "./calender";
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState("upcoming");
+  const [date, setDate] = useState<Date | null>(null);
 //  
   return (
     <>
@@ -63,19 +64,16 @@ export default function ActivitiesPage() {
                       attendees={90}
                       capacity={100}
                       progress={70} 
-                      icon={FaCamera }          />
+                      icon={FaCamera }/>
         </>
         )}
         {activities === "calender" && (
-          <div className=" border p-4 rounded shadow ">
-            <h2 className="text-xl font-bold mb-2">Activity Calendar</h2>
-            <p>
-              Explore our activity calendar to stay informed about all the
-              exciting events happening in our department. From academic
-              workshops to social gatherings, there`s always something to look
-              forward to!
-            </p>
-          </div>
+           <CustomDatePicker
+           selectedDate={date}
+           onChange={(d) => setDate(d)}
+           placeholder="Select a date"
+           showTime={true}
+         />
         )}
         {activities === "tickets" && (
           <div className=" border p-4 rounded shadow ">
