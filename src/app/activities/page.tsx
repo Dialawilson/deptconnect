@@ -1,10 +1,11 @@
 "use client";
 import { useState } from "react";
-import { FaCalendar } from "react-icons/fa";
-import { FaCamera, FaTimeline, FaLocationDot, FaPeopleGroup } from "react-icons/fa6";
+import { FaCamera } from "react-icons/fa";
+import ActivityCard from "./activiteCard";
 
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState("upcoming");
+//  
   return (
     <>
       <h1 className="font-extrabold text-4xl px-10 pt-20 text-[#489B3F]">
@@ -14,7 +15,7 @@ export default function ActivitiesPage() {
         Stay connected with departmental workshops, seminars and social
         activities.
       </p>
-      <div className="items-center rounded-3xl justify-content mx-9 bg-[#489B3F]/20  px-6 ">
+      <div className="items-center rounded-3xl mt-4 justify-content mx-9 bg-[#489B3F]/20  px-6 ">
         <div className="flex justify-center gap-4 mb-6 w-full">
           <button
             onClick={() => setActivities("upcoming")}
@@ -37,63 +38,33 @@ export default function ActivitiesPage() {
         </div>
       </div>
 
-      <div className="px-10">
+      <div className="md:px-10  flex flex-col gap-2.5">
         {activities === "upcoming" && (
-          <div className="border p-4  rounded shadow ">
-            <div className="flex">
-              <div className="bg-[#489B3F] h-20 w-20 rounded flex items-center justify-center mr-4">
-                <FaCamera size={50} className="text-white p-4" />
-                {/* <FaViadeo size={50} className="text-white p-4"/> */}
-              </div>
-              <div className="flex justify-between gap-4 w-full">
-                <div className="">
-                  <h2 className="text-xl font-bold mb-2">
-                    Upcoming Activities
-                  </h2>
-                  <div className="flex gap-1 items-center">
-                    <FaCalendar size={20} className="text-[#489B3F] mr-2" />
-                    <span className="py-1 px-1.5">
-                      Wednesday, January 28, 2024
-                    </span>
-                  </div>
-                  {/* time */}
-                  <div className="flex gap-1 items-center">
-                    <FaTimeline size={20} className="text-[#489B3F] mr-2" />
-                    <span className="py-1 px-1.5">
-                      3:00 PM - 5:00 PM
-                    </span>
-                  </div>
-                    {/* location */}
-                    <div className="flex gap-1 items-center">
-                    <FaLocationDot size={20} className="text-[#489B3F] mr-2" />
-                    <span className="py-1 px-1.5">
-                      Virtual (zoom)
-                    </span>
-                  </div>
-                </div>
-                <div>
-                  <span className="bg-[#489B3F]/15 rounded py-1 px-1.5">
-                    seminar
-                  </span>
-                </div>
-              </div>
-            </div>
+            <>
+          <ActivityCard
+                      title="Upcoming Activity"
+                      date="Wednesday, January 28, 2024"
+                      time="3:00 PM - 5:00 PM"
+                      location="Virtual (zoom)"
+                      category="seminar"
+                      description="Join us for our upcoming departmental activities and events. Stay tuned for workshops, seminars, and social gatherings designed to foster learning and community engagement."
+                      attendees={50}
+                      capacity={100}
+                      progress={50} 
+                      icon={FaCamera }          />
 
-            <p className="mt-6">
-              Join us for our upcoming departmental activities and events. Stay
-              tuned for workshops, seminars, and social gatherings designed to
-              foster learning and community engagement.
-            </p>
-            <div className="mt-4 flex justify-between items-center">
-                <div className="flex gap-1 items-center ">
-                    <FaPeopleGroup size={20} className="text-[#489B3F] mr-2 " />
-                    <span className="py-1 px-1.5">
-                      50/100 attendees
-                    </span>
-                </div>
-                    <span>33 spots available</span>
-            </div>
-          </div>
+                    <ActivityCard
+                      title="Upcoming Activity"
+                      date="Wednesday, January 28, 2024"
+                      time="3:00 PM - 5:00 PM"
+                      location="Virtual (zoom)"
+                      category="seminar"
+                      description="Join us for our upcoming departmental activities and events. Stay tuned for workshops, seminars, and social gatherings designed to foster learning and community engagement."
+                      attendees={90}
+                      capacity={100}
+                      progress={70} 
+                      icon={FaCamera }          />
+        </>
         )}
         {activities === "calender" && (
           <div className=" border p-4 rounded shadow ">
