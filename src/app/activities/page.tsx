@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { FaCamera } from "react-icons/fa";
 import ActivityCard from "./activiteCard";
+import CalenderCard from "./calenderCard";
 import CustomDatePicker from "./calender";
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState("upcoming");
@@ -64,16 +65,37 @@ export default function ActivitiesPage() {
                       attendees={90}
                       capacity={100}
                       progress={70} 
-                      icon={FaCamera }/>
+                      icon={FaCamera }
+                      />
         </>
         )}
         {activities === "calender" && (
-           <CustomDatePicker
+            <>
+            <div className=" border p-4  flex gap-2.5 ">
+
+            <div>
+           {/* <CustomDatePicker
            selectedDate={date}
            onChange={(d) => setDate(d)}
            placeholder="Select a date"
            showTime={true}
-         />
+           /> */}
+           <input type="datetime-local" name="" id="" />
+           </div>
+           <div className="flex">
+              <CalenderCard
+                title="Activity Title"
+                date="January 28, 2024"
+                time="3:00 PM - 5:00 PM"
+                location="Virtual (zoom)"
+                category="seminar"
+                description="Join us for our upcoming departmental activities and events. Stay tuned for workshops, seminars, and social gatherings designed to foster learning and community engagement."
+                icon={FaCamera}
+               />
+               
+           </div>
+           </div>
+       </>
         )}
         {activities === "tickets" && (
           <div className=" border p-4 rounded shadow ">

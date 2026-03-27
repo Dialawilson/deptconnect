@@ -17,18 +17,19 @@ export default function CustomDatePicker({
   selectedDate,
   onChange,
   placeholder = "Select date",
-  showTime = false,
+  showTime = true,
   minDate,
   maxDate,
   className = "",
 }: CustomDatePickerProps) {
-  return (
+    return (
     <DatePicker
       selected={selectedDate}
       onChange={onChange}
       placeholderText={placeholder}
       showTimeSelect={showTime}
       minDate={minDate}
+      
       maxDate={maxDate}
       dateFormat={showTime ? "Pp" : "yyyy-MM-dd"}
       className={`border p-2 rounded w-full ${className}`}
