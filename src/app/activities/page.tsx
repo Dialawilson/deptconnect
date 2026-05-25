@@ -3,7 +3,8 @@ import { useState } from "react";
 import { FaCamera } from "react-icons/fa";
 import ActivityCard from "./activiteCard";
 import CalenderCard from "./calenderCard";
-import CustomDatePicker from "./calender";
+import DateCalendarFormProps from "./calender";
+// import CustomDatePicker from "./calender";
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState("upcoming");
   const [date, setDate] = useState<Date | null>(null);
@@ -80,7 +81,8 @@ export default function ActivitiesPage() {
            placeholder="Select a date"
            showTime={true}
            /> */}
-           <input type="datetime-local" name="" id="" />
+           {/* <input type="datetime-local" name="" id="" /> */}
+           <DateCalenderFromProps/>
            </div>
            <div className="flex">
               <CalenderCard

@@ -1,38 +1,20 @@
-"use client";
+import dayjs from 'dayjs';
+import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-
-interface CustomDatePickerProps {
-  selectedDate: Date | null;
-  onChange: (date: Date | null) => void;
-  placeholder?: string;
-  showTime?: boolean;
-  minDate?: Date;
-  maxDate?: Date;
-  className?: string;
-}
-
-export default function CustomDatePicker({
-  selectedDate,
-  onChange,
-  placeholder = "Select date",
-  showTime = true,
-  minDate,
-  maxDate,
-  className = "",
-}: CustomDatePickerProps) {
-    return (
-    <DatePicker
-      selected={selectedDate}
-      onChange={onChange}
-      placeholderText={placeholder}
-      showTimeSelect={showTime}
-      minDate={minDate}
-      
-      maxDate={maxDate}
-      dateFormat={showTime ? "Pp" : "yyyy-MM-dd"}
-      className={`border p-2 rounded w-full ${className}`}
-    />
+export default function DateCalendarFormProps() {
+  return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DateCalendar', 'DateCalendar']}>
+        <DemoItem label="disabled">
+          <DateCalendar defaultValue={dayjs('2022-04-17')} disabled />
+        </DemoItem>
+        <DemoItem label="readOnly">
+          <DateCalendar defaultValue={dayjs('2022-04-17')} readOnly />
+        </DemoItem>
+      </DemoContainer>
+    </LocalizationProvider>
   );
 }

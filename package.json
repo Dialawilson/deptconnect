@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@deemlol/next-icons": "^0.1.9",
+    "@mui/x-date-pickers": "^9.3.0",
     "cors": "^2.8.6",
+    "dayjs": "^1.11.20",
     "dotenv": "^17.2.4",
     "express": "^5.2.1",
     "next": "16.1.6",
