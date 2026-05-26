@@ -4,6 +4,7 @@ import { FaCamera } from "react-icons/fa";
 import ActivityCard from "./activiteCard";
 import CalenderCard from "./calenderCard";
 import DateCalendarFormProps from "./calender";
+import TicketCard from "./tickets/ticketCard";
 // import CustomDatePicker from "./calender";
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState("upcoming");
@@ -102,12 +103,7 @@ export default function ActivitiesPage() {
         )}
         {activities === "tickets" && (
           <div className=" border p-4 rounded shadow ">
-            <h2 className="text-xl font-bold mb-2">Tickets & Registration</h2>
-            <p>
-              Secure your spot for upcoming departmental activities and events.
-              Check out our ticketing options and register now to be part of the
-              vibrant community experience we offer.
-            </p>
+            <TicketCard/>
           </div>
         )}
       </div>
