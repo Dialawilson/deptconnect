@@ -82,7 +82,8 @@ export default function ActivitiesPage() {
            showTime={true}
            /> */}
            {/* <input type="datetime-local" name="" id="" /> */}
-           <DateCalenderFromProps/>
+           <DateCalendarFormProps/>
+           
            </div>
            <div className="flex">
               <CalenderCard
