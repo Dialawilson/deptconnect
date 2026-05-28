@@ -81,6 +81,7 @@ export default function ActivityCard({
 
       <div className="bg-[#489B3F]/20 w-full mt-2">
         <div
+          className="rounded"
           style={{
             width: `${progress}%`,
             background: "#489B3F",

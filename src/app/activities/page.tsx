@@ -8,7 +8,7 @@ import TicketCard from "./tickets/ticketCard";
 // import CustomDatePicker from "./calender";
 export default function ActivitiesPage() {
   const [activities, setActivities] = useState("upcoming");
-  const [date, setDate] = useState<Date | null>(null);
+  // const [date, setDate] = useState<Date | null>(null);
 //  
   return (
     <>
@@ -103,7 +103,26 @@ export default function ActivitiesPage() {
         )}
         {activities === "tickets" && (
           <div className=" border p-4 rounded shadow ">
-            <TicketCard/>
+            <TicketCard
+              title="Ticket Title"
+              date="January 28, 2024"
+              time="3:00 PM - 5:00 PM"
+              location="Virtual (zoom)"
+              category="seminar"
+              description="Join us for our upcoming departmental activities and events. Stay tuned for workshops, seminars, and social gatherings designed to foster learning and community engagement."
+              attendees={50}
+              capacity={100}
+              progress={50}
+              icon={FaCamera}
+              ticketTitle="Standard Ticket"
+              ticketDescription="Get access to the main event and networking opportunities."
+              standardTitle="Standard"
+              vipTitle="VIP Ticket"
+              vipDescription="Enjoy exclusive access to VIP lounges, priority seating, and special perks."
+              stundentTitle="Student Ticket"
+              studentDescription="Discounted ticket for students with valid ID."
+              standardDescription="Get access to the main event and networking opportunities."
+            />
           </div>
         )}
       </div>
