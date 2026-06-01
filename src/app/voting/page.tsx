@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import secure from "../../assets/img/secure.png";
 import james from "../../assets/img/james.png";
@@ -5,8 +6,10 @@ import michael from "../../assets/img/michael.jpg";
 import Aisha from "../../assets/img/Aisha.jpg";
 import logo from "../../assets/img/logo.png";
 import { Cast, Users, BarChart, Instagram, Linkedin, Twitter } from "@deemlol/next-icons";
+import { useState } from "react";
 
 function VotingPage() {
+  const [activeTab, setActiveTab] = useState("cast");
   return (
     <div className="w-full max-w-7xl text-left flex flex-col items-center justify-center text-center mx-auto px-4 sm:px-6 md:px-10 py-4">
 
@@ -31,19 +34,26 @@ function VotingPage() {
       <div className="w-full bg-white py-6">
         <div className="flex justify-between bg-[#489B3F73] p-3 sm:p-4 rounded-md text-sm sm:text-base">
 
-          <div className="flex gap-2 items-center bg-white px-3 py-2 rounded-md">
+          <div className="flex ">
+            <button className={` flex text-center gap-2 items-center  px-3 py-2 rounded-md ${activeTab === 'cast' ? 'bg-[#489B3F] text-white' : 'bg-white text-black'}`} onClick={() => setActiveTab("cast")}>
+
             <Cast size={24} className='text-black' />
-            <p className="text-black text-center">Cast Vote</p>
+            Cast Vote
+            </button>
           </div>
 
           <div className="flex gap-2 items-center px-3 py-2">
-            <Users size={24} className='text-black'/>
-            <p className="text-black">Campaigns</p>
+            <button className={`text-black flex text-center gap-2 items-center  px-3 py-2 rounded-md ${activeTab === 'campaigns' ? 'bg-[#489B3F] text-white' : 'bg-white text-black'}`} onClick={() => setActiveTab("campaigns")}>
+              <Users size={24} className='text-black'/>
+              Campaigns
+            </button>
           </div>
 
           <div className="flex gap-2 items-center px-3 py-2">
-            <BarChart size={24} className='text-black'/>
-            <p className="text-black">Results</p>
+            <button className={`text-black flex text-center gap-2 items-center  px-3 py-2 rounded-md ${activeTab === 'results' ? 'bg-[#489B3F] text-white' : 'bg-white text-black'}`} onClick={() => setActiveTab("results")}>
+              <BarChart size={24} className='text-black'/>
+              Results
+            </button>
           </div>
 
         </div>
@@ -52,7 +62,7 @@ function VotingPage() {
       {/* ELECTION */}
       <div className="w-full bg-white px-4 py-6">
         <div className="w-full mx-auto border border-black rounded-md">
-
+        {activeTab === "cast" && (
           <div className="flex flex-col justify-start items-start p-2 md:p-6  gap-6">
 
             <p className="text-black font-bold">
@@ -131,9 +141,30 @@ function VotingPage() {
             </div>
 
           </div>
+        )}
+      {activeTab === "campaigns" && (
+        <div className="w-full bg-white px-4 py-6">
+          <p className="text-black font-bold text-lg">
+            Campaigns
+          </p>
+          <p className="text-black text-sm sm:text-base">
+            Explore the ongoing campaigns and manifestos of the candidates. Learn about their plans and initiatives for the department.
+          </p>
         </div>
-      </div>
+      )}
+      {activeTab === "results" && (
+        <div className="w-full bg-white px-4 py-6">
+          <p className="text-black font-bold text-lg">
+            Results
+          </p>
+          <p className="text-black text-sm sm:text-base">
+            View the election results and see how your vote contributed to the outcome. Stay informed about the elected representatives and their plans for the department.
+          </p>
+        </div>
+      )}
 
+          </div> 
+        </div>
       {/* FOOTER */}
       <div className="bg-white w-full">
   <div className="flex flex-col lg:flex-row items-start justify-between p-10 gap-4">

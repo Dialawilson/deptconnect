@@ -155,7 +155,7 @@ export default function TicketCard({
                         
                         {/* Conditionally render this only when showBenefits is true */}
                         {showBenefits && standardBenefits && (
-                            <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn">
+                            <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn animate-fadeOut transition-opacity duration-300">
                                 <ul className="list-disc list-inside">
                                     {standardBenefits.map((benefit, index) => (
                                         <li key={index} className="mt-1 flex"><FaCheck className="mr-2" />{benefit}</li>
@@ -172,15 +172,15 @@ export default function TicketCard({
 
                 {/* VIP Ticket Block */}
                 <div className="rounded border gap-2 p-4 px-4 w-full relative overflow-hidden">
-                    <div className="absolute top-0 right-0 bg-[#489B3F]/10 text-[#489B3F] text-[9px] font-bold px-2 py-0.5 rounded-bl uppercase tracking-wider">
+                    {/* <div className="absolute top-0 right-0 bg-[#489B3F]/10 text-[#489B3F] text-[9px] font-bold px-2 py-0.5 rounded-bl uppercase tracking-wider">
                         Premium
-                    </div>
+                    </div> */}
                     <div className=" justify-between items-start mb-1">
                         <h3 className="font-semibold">{vipTitle}</h3>
                     <p className="mb-2 text-sm text-gray-600">{vipDescription}</p>
 
                         {showBenefits && vipBenefits && (
-                            <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn">
+                            <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn animate-fadeOut transition-opacity duration-300">
                                 <ul className="list-disc list-inside">
                                     {vipBenefits.map((benefit, index) => (
                                         <li key={index} className="mt-1 flex"><FaCheck className="mr-2" />{benefit}</li>
@@ -201,7 +201,7 @@ export default function TicketCard({
                         <h3 className="font-semibold">{stundentTitle}</h3>
                         <p className="mb-2 text-sm text-gray-600">{studentDescription}</p>
                        {showBenefits && studentBenefits &&(
-                            <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn">
+                            <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn animate-fadeOut transition-opacity duration-300">
                                 <ul className="list-disc list-inside">
                                     {studentBenefits.map((benefit, index) => (
                                         <li key={index} className="mt-1 flex"><FaCheck className="mr-2" />{benefit}</li>
