@@ -39,6 +39,7 @@ function Shop() {
                             <option value="">Accessories</option>
                             <option value="">Lab Equipments</option>
                             <option value="">Tech</option>
+                            <option value="">books</option>
                         </select>
                     </div>
                 </div>
