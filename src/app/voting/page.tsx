@@ -4,14 +4,10 @@ import secure from "../../assets/img/secure.png";
 import james from "../../assets/img/james.png";
 import michael from "../../assets/img/michael.jpg";
 import Aisha from "../../assets/img/Aisha.jpg";
-import logo from "../../assets/img/logo.png";
 import {
   Cast,
   Users,
   BarChart,
-  Instagram,
-  Linkedin,
-  Twitter,
 } from "@deemlol/next-icons";
 import { useState } from "react";
 
@@ -170,18 +166,79 @@ function VotingPage() {
             </div>
           )}
           {activeTab === "results" && (
-            <div className="w-full bg-white px-4 py-6">
-              <p className="text-black font-bold text-lg">Results</p>
+            <div className="w-full bg-white px-4 py-6 flex flex-col gap-6">
+              <div>
+
+              <h3 className="text-black font-bold text-md">Election Results</h3>
               <p className="text-black text-sm sm:text-base">
-                View the election results and see how your vote contributed to
-                the outcome. Stay informed about the elected representatives and
-                their plans for the department.
+                Live vote counts for Departmental election
               </p>
+              </div>
+              {/* ranking and progres */}
+              <div className="flex flex-row justify-between gap-8">
+                <div className="text-gray-500 font-bold flex items-center gap-4">
+                  <span className="text-2xl">#1</span>
+                  <Image
+                    src={michael}
+                    alt="Micheal Agunwa"
+                    className="rounded-full md:rounded-md lg:rounded-full md:w-full md:h-50 w-10 h-10 lg:w-24 lg:h-24 object-cover"
+                  />
+                  <p className="text-black font-bold">
+                    Micheal Agunwa <br />
+                    <span className="font-light text-sm text-gray-500">400 level</span>
+                  </p>
+                </div>
+                <div className="text-gray-500 font-bold flex flex-col justify-center items-center gap-1">
+                <span>157</span>
+                <span>49.05%</span>
+                </div>
+              </div>
+              {/* progress bar */}
+              <div>
+                <div className="w-full h-2 bg-gray-200 rounded-full">
+                  <div className="h-2 bg-green-500 rounded-full w-49"></div>
+                </div>
+              </div>
+              {/*  */}
+
+               {/* ranking and progres */}
+              <div className="flex flex-row justify-between gap-8">
+                <div className="text-gray-500 font-bold flex items-center gap-4">
+                  <span className="text-2xl">#2</span>
+                  <Image
+                    src={michael}
+                    alt="Micheal Agunwa"
+                    className="rounded-full md:rounded-md lg:rounded-full md:w-full md:h-50 w-10 h-10 lg:w-24 lg:h-24 object-cover"
+                  />
+                  <p className="text-black font-bold">
+                    Micheal Agunwa <br />
+                    <span className="font-light text-sm text-gray-500">400 level</span>
+                  </p>
+                </div>
+                <div className="text-gray-500 font-bold flex flex-col justify-center items-center gap-1">
+                <span>157</span>
+                <span>40.05%</span>
+                </div>
+              </div>
+              {/* progress bar */}
+              <div>
+                <div className="w-full h-2 bg-gray-200 rounded-full">
+                  <div className="h-2 bg-green-500 rounded-full w-40"></div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-between gap-8">
+                <hr />
+                <div className="flex flex-row justify-between gap-4">
+                  <div>
+                    <p className="text-gray-500 font-semibold">Total votes cast</p>
+                  </div>
+                  <div>383</div>
+                </div>
+              </div>
             </div>
           )}
         </div>
       </div>
-     
     </div>
   );
 }
