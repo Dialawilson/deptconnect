@@ -2,10 +2,10 @@
 
 import { useState, type ComponentType } from "react";
 import Link from "next/link";
-import { 
-    FaCalendar, 
-    FaTimeline, 
-    FaLocationDot, 
+import {
+    FaCalendar,
+    FaTimeline,
+    FaLocationDot,
     FaPeopleGroup,
     FaCircleInfo,
     FaCheck,
@@ -15,7 +15,7 @@ import {
     FaXmark
 } from "react-icons/fa6";
 
-interface TicketProps{
+interface TicketProps {
     title: string;
     date: string;
     time: string;
@@ -80,10 +80,11 @@ export default function TicketCard({
         "Student discount",
     ];
 
-    return(
+    return (
         <div className="border p-4 rounded shadow">
             {/* Custom Animations Styling for Modal */}
-            <style dangerouslySetInnerHTML={{__html: `
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 @keyframes fadeIn {
                     from { opacity: 0; }
                     to { opacity: 1; }
@@ -107,18 +108,18 @@ export default function TicketCard({
                 <div className="flex justify-between gap-4 w-full">
                     <div>
                         <h3 className="text-lg font-bold">{title}</h3>
-                       <div className="flex gap-1 items-center">
-                        <FaCalendar size={20} className="text-[#489B3F] mr-2"/>
-                        <span>{date}</span>
-                       </div>
-                       <div className="flex gap-1 items-center">
-                        <FaTimeline size={20} className="text-[#489B3F] mr-2"/>
-                        <span>{time}</span>
-                       </div>
-                       <div className="flex gap-1 items-center">
-                        <FaLocationDot size={20} className="text-[#489B3F] mr-2"/>
-                        <span>{location}</span>
-                       </div>
+                        <div className="flex gap-1 items-center">
+                            <FaCalendar size={20} className="text-[#489B3F] mr-2" />
+                            <span>{date}</span>
+                        </div>
+                        <div className="flex gap-1 items-center">
+                            <FaTimeline size={20} className="text-[#489B3F] mr-2" />
+                            <span>{time}</span>
+                        </div>
+                        <div className="flex gap-1 items-center">
+                            <FaLocationDot size={20} className="text-[#489B3F] mr-2" />
+                            <span>{location}</span>
+                        </div>
                     </div>
                     <div>
                         <span className="bg-[#489B34]/15 rounded py-1 px-1.5 text-xs font-semibold text-[#489B3F]">
@@ -132,16 +133,16 @@ export default function TicketCard({
 
             <div className="mt-4 flex justify-between items-center">
                 <div className="flex gap-1 items-center">
-                    <FaPeopleGroup size={20} className="text-[#489B3F] mr-2"/>
+                    <FaPeopleGroup size={20} className="text-[#489B3F] mr-2" />
                     <span>{attendees} / {capacity} attendees</span>
                 </div>
                 <span>{spotsLeft} spots left</span>
             </div>
-            
+
             <div className="bg-[#4B9B3F]/20 h-2 w-full rounded mt-4">
                 <div className="bg-[#489B3F] h-2 rounded" style={{
-                    height:"10px",
-                    width: `${progress}%` 
+                    height: "10px",
+                    width: `${progress}%`
                 }}></div>
             </div>
             <p className="my-8 font-semibold">Select ticket</p>
@@ -150,9 +151,9 @@ export default function TicketCard({
                 <div className="rounded border gap-2 p-4 px-4 w-full">
                     <div className="justify-between items-start mb-1">
                         <h3 className="font-semibold">{standardTitle}</h3>
-                    <p className="mb-2 mt-2 text-sm text-gray-600">{standardDescription}</p>
+                        <p className="mb-2 mt-2 text-sm text-gray-600">{standardDescription}</p>
 
-                        
+
                         {/* Conditionally render this only when showBenefits is true */}
                         {showBenefits && standardBenefits && (
                             <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn animate-fadeOut transition-opacity duration-300">
@@ -164,7 +165,7 @@ export default function TicketCard({
                             </div>
                         )}
                     </div>
-                    
+
                     <button className="bg-[#489B3F] w-full text-white py-2 px-4 rounded hover:bg-[#489B3F]/80 font-semibold flex items-center justify-center gap-2 cursor-pointer transition-colors duration-200">
                         <span>+</span> Select Ticket
                     </button>
@@ -177,7 +178,7 @@ export default function TicketCard({
                     </div> */}
                     <div className=" justify-between items-start mb-1">
                         <h3 className="font-semibold">{vipTitle}</h3>
-                    <p className="mb-2 text-sm text-gray-600">{vipDescription}</p>
+                        <p className="mb-2 text-sm text-gray-600">{vipDescription}</p>
 
                         {showBenefits && vipBenefits && (
                             <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn animate-fadeOut transition-opacity duration-300">
@@ -188,7 +189,7 @@ export default function TicketCard({
                                 </ul>
                             </div>
                         )}
-                       
+
                     </div>
                     <button className="bg-[#489B3F] w-full text-white py-2 px-4 rounded hover:bg-[#489B3F]/80 font-semibold flex items-center justify-center gap-2 cursor-pointer transition-colors duration-200">
                         <span>+</span> Select Ticket
@@ -200,7 +201,7 @@ export default function TicketCard({
                     <div className="justify-between items-start mb-1">
                         <h3 className="font-semibold">{stundentTitle}</h3>
                         <p className="mb-2 text-sm text-gray-600">{studentDescription}</p>
-                       {showBenefits && studentBenefits &&(
+                        {showBenefits && studentBenefits && (
                             <div className="bg-[#489B3F]/10 text-[#489B3F] my-4 text-xs font-semibold py-2 px-3 mt-2 rounded-xl animate-fadeIn animate-fadeOut transition-opacity duration-300">
                                 <ul className="list-disc list-inside">
                                     {studentBenefits.map((benefit, index) => (
@@ -208,7 +209,7 @@ export default function TicketCard({
                                     ))}
                                 </ul>
                             </div>
-                       )}
+                        )}
                     </div>
                     <button className="bg-[#489B3F] w-full text-white py-2 px-4 rounded hover:bg-[#489B3F]/80 font-semibold flex items-center justify-center gap-2 cursor-pointer transition-colors duration-200">
                         <span>+</span> Select Ticket
@@ -217,8 +218,8 @@ export default function TicketCard({
 
                 <div className="flex justify-center items-center mt-6 border-t pt-4">
                     {/* Updated button to toggle state and dynamically change text */}
-                    <button  
-                        onClick={() => setShowBenefits(!showBenefits)} 
+                    <button
+                        onClick={() => setShowBenefits(!showBenefits)}
                         className="text-[#489B3F] hover:underline font-bold text-sm cursor-pointer"
                     >
                         {showBenefits ? "Show less" : "View all ticket details"}

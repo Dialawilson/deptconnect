@@ -4,7 +4,6 @@ import ActivitiesComponent from "@/componnets/activities/Activities";
 import Simplifed from "@/componnets/Simplified/Simplified";
 import Started from "@/componnets/started/started"
 import BGimg from '@/assets/img/pagentry.jpg';
-import Btn from '@/componnets/footer/footer'
 import QuickStats from "@/componnets/Quick_Stats/QuickStats";
 
 
