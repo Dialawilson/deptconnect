@@ -4,11 +4,7 @@ import secure from "../../assets/img/secure.png";
 import james from "../../assets/img/james.png";
 import michael from "../../assets/img/michael.jpg";
 import Aisha from "../../assets/img/Aisha.jpg";
-import {
-  Cast,
-  Users,
-  BarChart,
-} from "@deemlol/next-icons";
+import { Cast, Users, BarChart } from "@deemlol/next-icons";
 import { useState } from "react";
 
 function VotingPage() {
@@ -38,7 +34,7 @@ function VotingPage() {
         <div className="flex justify-between bg-[#489B3F73] p-3 sm:p-4 rounded-md text-sm sm:text-base">
           <div className="flex ">
             <button
-              className={` flex text-center gap-2 items-center  px-3 py-2 rounded-md ${activeTab === "cast" ? "bg-[#489B3F] text-white" : "bg-white text-black"}`}
+              className={` flex text-center gap-2 items-center  px-6 py-2 rounded-full ${activeTab === "cast" ? "bg-[#489B3F] text-white" : "bg-white text-black"}`}
               onClick={() => setActiveTab("cast")}
             >
               <Cast size={24} className="text-black" />
@@ -48,7 +44,7 @@ function VotingPage() {
 
           <div className="flex gap-2 items-center px-3 py-2">
             <button
-              className={`text-black flex text-center gap-2 items-center  px-3 py-2 rounded-md ${activeTab === "campaigns" ? "bg-[#489B3F] text-white" : "bg-white text-black"}`}
+              className={`text-black flex text-center gap-2 items-center  px-6 py-2 rounded-full ${activeTab === "campaigns" ? "bg-[#489B3F] text-white" : "bg-white text-black"}`}
               onClick={() => setActiveTab("campaigns")}
             >
               <Users size={24} className="text-black" />
@@ -58,7 +54,7 @@ function VotingPage() {
 
           <div className="flex gap-2 items-center px-3 py-2">
             <button
-              className={`text-black flex text-center gap-2 items-center  px-3 py-2 rounded-md ${activeTab === "results" ? "bg-[#489B3F] text-white" : "bg-white text-black"}`}
+              className={`text-black flex text-center gap-2 items-center  px-6 py-2 rounded-full  ${activeTab === "results" ? "bg-[#489B3F] text-white" : "bg-white text-black"}`}
               onClick={() => setActiveTab("results")}
             >
               <BarChart size={24} className="text-black" />
@@ -168,11 +164,12 @@ function VotingPage() {
           {activeTab === "results" && (
             <div className="w-full bg-white px-4 py-6 flex flex-col gap-6">
               <div>
-
-              <h3 className="text-black font-bold text-md">Election Results</h3>
-              <p className="text-black text-sm sm:text-base">
-                Live vote counts for Departmental election
-              </p>
+                <h3 className="text-black font-bold text-md">
+                  Election Results
+                </h3>
+                <p className="text-black text-sm sm:text-base">
+                  Live vote counts for Departmental election
+                </p>
               </div>
               {/* ranking and progres */}
               <div className="flex flex-row justify-between gap-8">
@@ -185,12 +182,14 @@ function VotingPage() {
                   />
                   <p className="text-black font-bold">
                     Micheal Agunwa <br />
-                    <span className="font-light text-sm text-gray-500">400 level</span>
+                    <span className="font-light text-sm text-gray-500">
+                      400 level
+                    </span>
                   </p>
                 </div>
                 <div className="text-gray-500 font-bold flex flex-col justify-center items-center gap-1">
-                <span>157</span>
-                <span>49.05%</span>
+                  <span>157</span>
+                  <span>49.05%</span>
                 </div>
               </div>
               {/* progress bar */}
@@ -201,7 +200,7 @@ function VotingPage() {
               </div>
               {/*  */}
 
-               {/* ranking and progres */}
+              {/* ranking and progres */}
               <div className="flex flex-row justify-between gap-8">
                 <div className="text-gray-500 font-bold flex items-center gap-4">
                   <span className="text-2xl">#2</span>
@@ -212,12 +211,14 @@ function VotingPage() {
                   />
                   <p className="text-black font-bold">
                     Micheal Agunwa <br />
-                    <span className="font-light text-sm text-gray-500">400 level</span>
+                    <span className="font-light text-sm text-gray-500">
+                      400 level
+                    </span>
                   </p>
                 </div>
                 <div className="text-gray-500 font-bold flex flex-col justify-center items-center gap-1">
-                <span>157</span>
-                <span>40.05%</span>
+                  <span>157</span>
+                  <span>40.05%</span>
                 </div>
               </div>
               {/* progress bar */}
@@ -230,7 +231,9 @@ function VotingPage() {
                 <hr />
                 <div className="flex flex-row justify-between gap-4">
                   <div>
-                    <p className="text-gray-500 font-semibold">Total votes cast</p>
+                    <p className="text-gray-500 font-semibold">
+                      Total votes cast
+                    </p>
                   </div>
                   <div>383</div>
                 </div>
